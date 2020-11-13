@@ -1,2 +1,2 @@
-# Propalsal-Temporary
+# Proposal-Temporary
 Side Project Temporary Files
