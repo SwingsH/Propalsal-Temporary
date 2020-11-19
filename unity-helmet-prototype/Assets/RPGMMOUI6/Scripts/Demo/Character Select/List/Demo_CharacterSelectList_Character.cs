@@ -15,6 +15,9 @@ namespace DuloGames.UI
         [SerializeField] private Toggle m_Toggle;
         [SerializeField] private Button m_Delete;
 
+        [Header("Attribute")]
+        [SerializeField] private AttackParts m_AttackParts;
+
         [Header("Texts")]
         [SerializeField] private Text m_NameText;
         [SerializeField] private Text m_LevelText;
@@ -116,6 +119,8 @@ namespace DuloGames.UI
 
         private void OnToggleValueChanged(bool value)
         {
+            // prefer not to use unity events so...
+            GameMain.Instance.OnCommandPressed(this.m_AttackParts);
             if (value && this.m_OnCharacterSelected != null)
                 this.m_OnCharacterSelected.Invoke(this);
         }
